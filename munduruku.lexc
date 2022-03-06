@@ -1,0 +1,127 @@
+Multichar_Symbols NUMBER=SING|PERSON=1+ NUMBER=SING|PERSON=2+ CLUSIVITY=Ex|NUMBER=PLUR|PERSON=1+ CLUSIVITY=In|NUMBER=PLUR|PERSON=1+ NUMBER=PLUR|PERSON=2+ NUMBER=SING|PERSON=3+
+
+LEXICON ROOT
+	Argument_Index_Bound_Perf;
+	Argument_Index_Bound_Imperf;
+	Argument_Index_Free;
+	Possessor_Index_Bound;
+	Lex_Perf;
+	Lex_Imperf;
+	Perf_root;
+	Imperf_root;
+	Perf;
+	Argument_Index_Bound_Noun;
+	Poss_mark_R1;
+	Poss_mark_R2;
+	Noun;
+	
+	
+LEXICON Possessor_Index_Bound
+NUMBER=SING|PERSON=1+:o		Clitic;
+NUMBER=SING|PERSON=2+:e		Clitic;
+CLUSIVITY=Ex|NUMBER=PLUR|PERSON=1+:oce	Clitic;
+CLUSIVITY=In|NUMBER=PLUR|PERSON=1+:wuy	Clitic;
+NUMBER=PLUR|PERSON=2+:ey	Clitic;
+NUMBER=SING|PERSON=3+:je	Clitic;
+
+LEXICON Clitic
+webe	#;
+ase	#;
+keg̃	#;
+wi	#;
+buxim	#;
+dag̃	#;
+teg̃	#;
+kay	#;
+xe	#;
+weju	#;
+kug̃	#;
+jeje	#;
+tog̃	#;
+pibun	#;
+wap	#;
+em	#;
+bima	#;
+buje	#;
+buye	#;
+
+LEXICON Argument_Index_Free
+NUMBER=SING|PERSON=1+:õn	#;
+NUMBER=SING|PERSON=2+:ẽn	#;
+CLUSIVITY=Ex|NUMBER=PLUR|PERSON=1+:oceju	#;
+CLUSIVITY=In|NUMBER=PLUR|PERSON=1+:wuyju	#;
+NUMBER=PLUR|PERSON=2+:eyju	#;
+	
+LEXICON Argument_Index_Bound_Perf
+NUMBER=SING|PERSON=1+:o		Lex_Perf;
+NUMBER=SING|PERSON=2+:e		Lex_Perf;
+CLUSIVITY=Ex|NUMBER=PLUR|PERSON=1+:oce	Lex_Perf;
+CLUSIVITY=In|NUMBER=PLUR|PERSON=1+:a	Lex_Perf;
+NUMBER=PLUR|PERSON=2+:epe	Lex_Perf;
+NUMBER=SING|PERSON=3+:o'	Lex_Perf;
+
+LEXICON Argument_Index_Bound_Imperf
+NUMBER=SING|PERSON=1+:o		Lex_Imperf;
+NUMBER=SING|PERSON=2+:e		Lex_Imperf;
+CLUSIVITY=Ex|NUMBER=PLUR|PERSON=1+:oce	Lex_Imperf;
+CLUSIVITY=In|NUMBER=PLUR|PERSON=1+:a	Lex_Imperf;
+NUMBER=PLUR|PERSON=2+:epe	Lex_Imperf;
+NUMBER=SING|PERSON=3+:o'	Lex_Imperf;
+	
+LEXICON Lex_Imperf
+Imperfective+:	Imperf_root;
+	
+LEXICON Lex_Perf
+Perfective+:	Perf_root;
+
+LEXICON Imperf_root
+(to_kill):aoka	#;
+(to_hunt):orok	#;
+(be_warm):xip	#;
+(to_cut):akat	#;
+(to_fear):parara	#;
+(to_walk):cu	#;
+(to_see):jo	#;
+(to_bathe):ajok	#;
+(to_pass):kap	#;
+(to_say):'e	#;
+
+
+LEXICON Perf_root
+(to_kill):aoka	Perf;
+(to_hunt):orok	Perf;
+(be_warm):xip	Perf;
+(to_cut):akat	Perf;
+(to_fear):parara	Perf;
+(to_walk):cu	Perf;
+(to_see):jo	Perf;
+(to_bathe):ajok	Perf;
+(to_pass):kap	Perf;
+(to_say):'e	Perf;
+
+LEXICON Perf
+:M	#;
+
+LEXICON Argument_Index_Bound_Noun
+NUMBER=SING|PERSON=1+:o		Poss_mark_R1;
+NUMBER=SING|PERSON=2+:e		Poss_mark_R1;
+CLUSIVITY=Ex|NUMBER=PLUR|PERSON=1+:oce	Poss_mark_R1;
+CLUSIVITY=In|NUMBER=PLUR|PERSON=1+:wuy	Poss_mark_R1;
+NUMBER=PLUR|PERSON=2+:ey	Poss_mark_R1;
+NUMBER=SING|PERSON=3.coref+:je	Poss_mark_R1;
+
+LEXICON Poss_mark_R1
+R1+:X	Noun;
+
+LEXICON Poss_mark_R2
+R2+:Y	Noun;
+
+LEXICON Noun
+mother:xi	#;
+leg:dao	#;
+arrow:op	#;
+finger:bu  #;
+voice:a'õ   #;
+arm:bay #;
+leaf:dup #;
+

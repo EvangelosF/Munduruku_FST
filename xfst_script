@@ -1,0 +1,36 @@
+define vowel a|e|i|o|u;
+define cons b|c|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z;
+
+define insM M -> m || [vowel] _ ;
+define isnG k M -> g̃;
+define insP p M -> m;
+define insT t M -> n;
+
+
+
+define r1cons X -> []|| _ cons;
+define r1vow X -> d|| _ vowel;
+define R2cons Y -> i || _ cons;
+define R2Tvow Y -> t || _ vowel;
+define R2Td Y -> t || _ d;
+define t2d t d -> t || .#. _;
+read lexc munduruku.lexc
+define lex;
+read regex lex .o. insM .o. insG .o. insT .o. insP .o. r1cons .o. r1vow .o. R2cons .o. R2Tvow .o. R2Td .o. t2d;
+
+
+apply up oxi
+1SG+R1+xi
+
+apply up odop
+1SG+R1+op
+
+apply up ixi
+R2+xi
+
+apply up top
+R2+op
+
+apply up tao
+R2+dao
+
