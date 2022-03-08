@@ -93,7 +93,7 @@ Multichar_Symbols 1SG+ 2SG+
 
 First of all, lexicons are declared by using *LEXICON* and then the name of it.
 
-The first lexicon is *Root*. Depending on the size of the transducer, words can be written inside the Root-lexicon. When working with multiple lexicons, it is require to declare them inside the Root-lexicon, otherwise they will not be recognized by the interface.
+The first lexicon is *Root*. Depending on the size of the transducer, words can be written inside the Root-lexicon. When working with multiple lexicons, it is required to declare them inside the Root-lexicon, otherwise they will not be recognized by the interface.
 ```
 LEXICON Root
         Possessor_Index_Bound;
