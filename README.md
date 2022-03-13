@@ -75,7 +75,14 @@ odop
 apply up tao
 R2+leg
 ```
+### Comments
 
+Comments can be written in the following way:
+```
+! this is a comment
+
+define lexicon    ! this is also a comment right next to the code
+```
 
 # Implementation
 
