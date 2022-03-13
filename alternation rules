@@ -1,17 +1,21 @@
-define vowel a|e|i|o|u;
-define cons b|c|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z;
+! alternation rules: xfst script
+! Evangelos Filippidis
+! Mundurukú morphological analyzer
 
-define insM M -> m || [vowel] _ ;
-define isnG k M -> g̃;
-define insP p M -> m;
-define insT t M -> n;
+define vowel a|e|i|o|u;   ! vowels
+define cons b|c|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z;    ! consonants except "d" because of special rule
 
-define r1cons X -> []|| _ cons;
-define r1vow X -> d|| _ vowel;
-define R2cons Y -> i || _ cons;
-define R2Tvow Y -> t || _ vowel;
-define R2Td Y -> t || _ d;
-define t2d t d -> t || .#. _;
-read lexc munduruku.lexc
-define lex;
-read regex lex .o. insM .o. insG .o. insT .o. insP .o. r1cons .o. r1vow .o. R2cons .o. R2Tvow .o. R2Td .o. t2d;
+define insM M -> m || [vowel] _ ;     !replace M with m when vowel preceding
+define isnG k M -> g̃;     ! replace kM with g̃
+define insP p M -> m;     ! replace pM with m
+define insT t M -> n;     ! replace tM with n
+
+define r1cons X -> []|| _ cons;     ! R1 empty when consonant follows
+define r1vow X -> d|| _ vowel;      ! R1 is "d" when vowel follows
+define R2cons Y -> i || _ cons;     ! R2 is "i" when consonant follows
+define R2Tvow Y -> t || _ vowel;    ! R2 is t when vowel follows
+define R2Td Y -> t || _ d;          ! R2 is t when d is initial letter of word
+define t2d t d -> t || .#. _;       ! replace "td" to "t" when they are the initial two letters of the word
+read lexc munduruku.lexc            ! load the lexicon
+define lex;                         ! bind the lexicon to a variable
+read regex lex .o. insM .o. insG .o. insT .o. insP .o. r1cons .o. r1vow .o. R2cons .o. R2Tvow .o. R2Td .o. t2d;     ! combine lexicon and alternation rules to one large transducer
