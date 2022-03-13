@@ -1,6 +1,11 @@
-!Bachelor Thesis of Evangelos Filippidis
+! Bachelor Thesis of Evangelos Filippidis
+! Lexicon entries for the lexc interface
+
+! Multicharacter Symbols used to describe the analysis form of the words
 Multichar_Symbols NUMBER=SING|PERSON=1+ NUMBER=SING|PERSON=2+ CLUSIVITY=Ex|NUMBER=PLUR|PERSON=1+ CLUSIVITY=In|NUMBER=PLUR|PERSON=1+ NUMBER=PLUR|PERSON=2+ NUMBER=SING|PERSON=3+
 
+
+! Root lexicon containing all the lexicons
 LEXICON ROOT
 	Argument_Index_Bound_Perf;
 	Argument_Index_Bound_Imperf;
@@ -16,7 +21,7 @@ LEXICON ROOT
 	Poss_mark_R2;
 	Noun;
 	
-	
+! possessor indexes that have the clitics in their continuation class	
 LEXICON Possessor_Index_Bound
 NUMBER=SING|PERSON=1+:o		Clitic;
 NUMBER=SING|PERSON=2+:e		Clitic;
@@ -25,6 +30,7 @@ CLUSIVITY=In|NUMBER=PLUR|PERSON=1+:wuy	Clitic;
 NUMBER=PLUR|PERSON=2+:ey	Clitic;
 NUMBER=SING|PERSON=3+:je	Clitic;
 
+! this lexicon lists all known clitics
 LEXICON Clitic
 webe	#;
 ase	#;
@@ -46,13 +52,15 @@ bima	#;
 buje	#;
 buye	#;
 
+! these argument indexes can occur on their own
 LEXICON Argument_Index_Free
 NUMBER=SING|PERSON=1+:õn	#;
 NUMBER=SING|PERSON=2+:ẽn	#;
 CLUSIVITY=Ex|NUMBER=PLUR|PERSON=1+:oceju	#;
 CLUSIVITY=In|NUMBER=PLUR|PERSON=1+:wuyju	#;
 NUMBER=PLUR|PERSON=2+:eyju	#;
-	
+
+! argument indexes that are bound to the verbs in the perfective aspect
 LEXICON Argument_Index_Bound_Perf
 NUMBER=SING|PERSON=1+:o		Lex_Perf;
 NUMBER=SING|PERSON=2+:e		Lex_Perf;
@@ -61,6 +69,7 @@ CLUSIVITY=In|NUMBER=PLUR|PERSON=1+:a	Lex_Perf;
 NUMBER=PLUR|PERSON=2+:epe	Lex_Perf;
 NUMBER=SING|PERSON=3+:o'	Lex_Perf;
 
+! argument indexes that are bound to the verbs in the imperfective aspect
 LEXICON Argument_Index_Bound_Imperf
 NUMBER=SING|PERSON=1+:o		Lex_Imperf;
 NUMBER=SING|PERSON=2+:e		Lex_Imperf;
@@ -68,13 +77,15 @@ CLUSIVITY=Ex|NUMBER=PLUR|PERSON=1+:oce	Lex_Imperf;
 CLUSIVITY=In|NUMBER=PLUR|PERSON=1+:a	Lex_Imperf;
 NUMBER=PLUR|PERSON=2+:epe	Lex_Imperf;
 NUMBER=SING|PERSON=3+:o'	Lex_Imperf;
-	
+
+! adding an the imperfective tag in the analysis form while keeping the surface form empty, same for perfective
 LEXICON Lex_Imperf
 Imperfective+:	Imperf_root;
 	
 LEXICON Lex_Perf
 Perfective+:	Perf_root;
 
+! lexicon that lists the verbs for the imperfective aspect
 LEXICON Imperf_root
 (to_kill):aoka	#;
 (to_hunt):orok	#;
@@ -87,7 +98,7 @@ LEXICON Imperf_root
 (to_pass):kap	#;
 (to_say):'e	#;
 
-
+! lexicon that lists the verbs for the perfective and has the Perf lexicon in the continuation class
 LEXICON Perf_root
 (to_kill):aoka	Perf;
 (to_hunt):orok	Perf;
@@ -100,9 +111,11 @@ LEXICON Perf_root
 (to_pass):kap	Perf;
 (to_say):'e	Perf;
 
+! placeholder symbol added for intermediate form for perfective aspect
 LEXICON Perf
 :M	#;
 
+! argument indexes for nouns
 LEXICON Argument_Index_Bound_Noun
 NUMBER=SING|PERSON=1+:o		Poss_mark_R1;
 NUMBER=SING|PERSON=2+:e		Poss_mark_R1;
@@ -111,12 +124,15 @@ CLUSIVITY=In|NUMBER=PLUR|PERSON=1+:wuy	Poss_mark_R1;
 NUMBER=PLUR|PERSON=2+:ey	Poss_mark_R1;
 NUMBER=SING|PERSON=3.coref+:je	Poss_mark_R1;
 
+! adding placeholder symbol "X" if R1 contiguity
 LEXICON Poss_mark_R1
 R1+:X	Noun;
 
+! adding placeholder symbol "Y" if R2 contiguity
 LEXICON Poss_mark_R2
 R2+:Y	Noun;
 
+! lexicon with nouns that work for most of the grammar
 LEXICON Noun
 mother:xi	#;
 leg:dao	#;
@@ -125,4 +141,3 @@ finger:bu  #;
 voice:a'õ   #;
 arm:bay #;
 leaf:dup #;
-
