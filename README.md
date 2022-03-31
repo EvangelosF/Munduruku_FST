@@ -1,4 +1,4 @@
-# Finite-State Transducer for Mundurukú
+# Building a Finite-State Transducer for Mundurukú
 
 Bachelor Thesis of Evangelos Filippidis
 
